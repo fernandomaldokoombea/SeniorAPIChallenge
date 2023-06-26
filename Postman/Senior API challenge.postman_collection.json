@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "b6c8c4f2-125b-46b9-9dac-5c2d0d2231af",
+		"name": "Senior API challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13956283"
+	},
+	"item": [
+		{
+			"name": "Recupera las primeras 10 fotos de Marte hechas por \"Curiosity\" en 1000 sol marciano.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Expect responseCode to be 200\", function () {\r",
+							"    pm.expect(responseCode.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"if (responseCode.code === 200) {\r",
+							"    var data = JSON.parse(responseBody);\r",
+							"\r",
+							"    //postman.setGlobalVariable(\"if\", data.data.id);\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/rovers/curiosity/photos?sol=1000&api_key={{api_key}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rovers",
+						"curiosity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "sol",
+							"value": "1000"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recupera las primeras 10 fotos de  “Mars” realizadas por \"Curiosity\" en la Tierra con fecha igual a “DATE”   (id = 1000) sol.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Expect responseCode to be 200\", function () {\r",
+							"    pm.expect(responseCode.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"if (responseCode.code === 200) {\r",
+							"    var data = JSON.parse(responseBody);\r",
+							"\r",
+							"    //postman.setGlobalVariable(\"if\", data.data.id);\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/rovers/curiosity/photos?api_key={{api_key}}&earth_date=2015-6-3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rovers",
+						"curiosity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						},
+						{
+							"key": "earth_date",
+							"value": "2015-6-3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validar que la cantidad de fotografías que tomó cada cámara \"Curiosity\" en (id = 1000) de Marte no sea mayor a 10 veces la cantidad tomada por otras cámaras en la misma fecha.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Expect responseCode to be 200\", function () {\r",
+							"    pm.expect(responseCode.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"if (responseCode.code === 200) {\r",
+							"    var data = JSON.parse(responseBody);\r",
+							"\r",
+							"    //postman.setGlobalVariable(\"if\", data.data.id);\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/rovers/curiosity/photos?api_key={{api_key}}&earth_date=2015-6-3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rovers",
+						"curiosity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						},
+						{
+							"key": "earth_date",
+							"value": "2015-6-3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
